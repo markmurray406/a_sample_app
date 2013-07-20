@@ -1,10 +1,16 @@
 ASampleApp::Application.routes.draw do
+  # See lisitng 5.32
+  get "users/new"
+
   # to see how this is called see controllers/static_pages_controllers.rb
   # this looks for a home.html.erb file in the static_pages folder
   #get "static_pages/home"
 
   # See Listing 5.23
   root to: 'static_pages#home'
+
+  # See Listing 5.32
+  match '/signup', to: 'users#new'
 
   # See Listing 5.21
   match '/help', to: 'static_pages#help'

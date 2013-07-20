@@ -1,56 +1,50 @@
 require 'spec_helper'
 	describe "Static pages" do
+
+		subject { page }
 	
 # Tests for Home page
+		# see Listing 5.20 for how visit root_path is contructed
 		describe "Home page" do
-			# This test for the presence of the Mntr me in the content
-			it "should have the h1 'Mntr me'" do
-				visit '/static_pages/home'
-				page.should have_selector('h1', :text => 'Mntr me')
-			end
+			# See page 259 on before method
+			before { visit root_path }
+				# This test for the presence of the Mntr me in the content
+				it { should have_selector('h1', text: 'Mntr me') }
 
-			# This test for the presence of the Mntr me in the base title
-			it "should have the base title" do
-				visit '/static_pages/home'
-				page.should have_selector('title', :text => "Mntr me")
-			end
+				# This test for the presence of the Mntr me in the base title
+				it { should have_selector('title', text: full_title('')) }
 
-			# This test for the presence of the Mntr me in the base title
-			it "should not have a custom page title" do
-				visit '/static_pages/home'
-			page.should_not have_selector('title', :text => '| Home')
-			end
+				# This test for the presence of the Mntr me in the base title
+				it { should_not have_selector 'title', text: '| Home' }
 		end
 
-# Tests for Help page
-	# This test for the presence of the Help in the content
+	# Tests for Help page
 		describe "Help page" do
-			it "should have the content 'help'" do
-				visit '/static_pages/help'
-				page.should have_content('Help')
-			end
+			before { visit help_path }
+				# This test for the presence of the Help in the content
+				it { should have_selector('h1', text: 'Help') }
 
-	# This tests for the presence of Mntr me | Help in the title 	
-			it "should have the right title" do
-				visit '/static_pages/help'
-				page.should have_selector('title',
-																	:text => "Mntr me | Help")
-			end	
+				# This tests for the presence of Mntr me | Help in the title 	
+				it { should have_selector('title', text: full_title('Help')) }
 		end	
 
-# Tests for About page
-	# This test for the presence of the About in the content
+	# Tests for About page
 		describe "About page" do
-			it "should have the content 'About'" do
-				visit '/static_pages/about'
-				page.should have_content('About')
-			end
+			before { visit about_path }
+				# This test for the presence of the About in the content
+				it { should have_selector('h1', text: 'About') }
 
-	# This tests for the presence of Mntr me | About in the title 		
-			it "should have the right title" do
-				visit '/static_pages/about'
-				page.should have_selector('title',
-																	:text => "Mntr me | About")
-			end	
+				# This tests for the presence of Mntr me | About in the title 		
+				it { should have_selector('title', text: full_title('About Us')) }
 		end	
-	end
+
+	# Tests for Contact page
+		describe "Contact page" do
+			before { visit contact_path }
+				# This test for the presence of the Contact in the content	
+				it { should have_selector('h1', text: 'Contact') }
+
+				# This tests for the presence of Mntr me | About in the title 	
+				it { should have_selector('title', text: full_title('Contact')) }
+		end
+end		

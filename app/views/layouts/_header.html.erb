@@ -1,0 +1,16 @@
+<%#= Header, see listing 5.1 and 5.10%>	
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="navbar-inner">
+		<div class="container">
+			<%= link_to "Mntr me", root_path, id: "logo" %>
+			<nav>
+				<ul class="nav pull-right">
+					<%#= Note, info on "root_path" etc, see Listing 5.24%>	
+					<li><%= link_to "Home", root_path %></li>
+					<li><%= link_to "Help", help_path %></li>
+					<li><%= link_to "Sign in", '#' %></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>

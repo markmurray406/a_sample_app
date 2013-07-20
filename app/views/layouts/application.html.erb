@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Mntr me | <%= yield(:title) %></title>
+		<%#= Adds the code ' <title>Mntr me | <%= yield(:title) . . . to the pages%>
+		<%#= full_title(yield) taken from application_helper.rb ledSee page 170%>
+		<title><%= full_title(yield(:title)) %></title>
 
+		<%#= Used to stop malicious attacks, see pg 170%>
 			<%= stylesheet_link_tag "application", :media => "all" %>
 			<%= javascript_include_tag "application" %>
 			<%= csrf_meta_tags %>
 	</head>
 
 	<body>
+		<%#= Need to put comment here, see pg 147%>	
 		<%= yield %>
 	</body>
 </html>

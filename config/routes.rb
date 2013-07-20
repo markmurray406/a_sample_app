@@ -1,4 +1,6 @@
 ASampleApp::Application.routes.draw do
+  # to see how this is called see controllers/static_pages_controllers.rb
+  # this looks for a home.html.erb file in the static_pages folder
   get "static_pages/home"
   get "static_pages/help"
   get "static_pages/about"

@@ -11,5 +11,18 @@ class StaticPagesController < ApplicationController
 
 	def contact
 	end
+
+  # Introduction and Setup pages
+	def aboutyou
+	end
+
+	def do_it
+	end
+
+	def goals
+	end
+
+	def linkedin
+	end
 	
 end

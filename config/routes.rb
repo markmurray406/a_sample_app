@@ -9,14 +9,25 @@ ASampleApp::Application.routes.draw do
   # See Listing 5.23
   root to: 'static_pages#home'
 
+  # -------------- Introduction and Setup pages ---------------------
+  match '/aboutyou', to: 'static_pages#aboutyou'
+  match '/do_it', to: 'static_pages#do_it'
+  match '/goals', to: 'static_pages#goals'
+
+  # filler page
+  match '/linkedin/auth', to: 'static_pages#linkedin'
+
+  # -------------- Signup pages ---------------------
   # See Listing 5.32
   match '/signup', to: 'users#new'
 
+  # -------------- Help etc pages ---------------------
   # See Listing 5.21
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
 
+  # -------------- Users pages ---------------------
   # see railscasts, http://railscasts.com/episodes/241-simple-omniauth-revised 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')

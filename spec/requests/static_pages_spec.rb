@@ -9,7 +9,7 @@ require 'spec_helper'
 			# See page 259 on before method
 			before { visit root_path }
 				# This test for the presence of the Mntr me in the content, see Listing 5.27
-				it { should have_selector('h1', text: 'Mntr me') }
+				it { should have_selector('h1', text: 'Sample') }
 
 				# This test for the presence of the Mntr me in the base title, see Listing 5.27
 				it { should have_selector('title', text: full_title('')) }

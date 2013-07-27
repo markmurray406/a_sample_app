@@ -17,6 +17,11 @@ ASampleApp::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
 
+  # see railscasts, http://railscasts.com/episodes/241-simple-omniauth-revised 
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

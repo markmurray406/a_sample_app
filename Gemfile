@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'bootstrap-sass', '2.1'
 
+#gem "omniauth" 
 gem 'omniauth-twitter'
-gem 'omniauth', :github => 'intridea/omniauth'
 
 group :development, :test do
 gem 'sqlite3', '1.3.5'

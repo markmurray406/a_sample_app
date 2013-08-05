@@ -6,9 +6,24 @@
 			<nav>
 				<ul class="nav pull-right">
 					<%#= Note, info on "root_path" etc, see Listing 5.24%>	
-					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Help", help_path %></li>
-					<li><%= link_to "Sign in", '/linkedin/auth' %></li>
+
+					<%#= This creates an if/else statement to show login/logout buttons, adding-users-with-devise, 16:00 #%>
+					<% if user_signed_in? %>
+						<li><%= link_to "Career (1)", career_path %></li>
+						<li><%= link_to "Skills (3)", skills_path %></li>
+						<li><%= link_to "Promote yourself (1)", '#' %></li>
+						<li><%= link_to "Contact us", contact_path %></li>
+						<li><%= link_to "Sign in", 'auth/linkedin' %></li>
+						<%#= This button allows the user to edit their profile see omrails, adding-users-with-devise, 18:30 #%>
+						<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+						<%#= This button creates a new session, see omrails, adding-users-with-devise, 15:00 #%>
+						<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+					<% else %>
+						<%#= This button creates a new session, see omrails, adding-users-with-devise, 13:00 #%>
+						<li><%= link_to "Login", new_user_session_path %></li>
+					<% end %>
+					
+
 				</ul>
 			</nav>
 		</div>

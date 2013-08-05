@@ -1,0 +1,54 @@
+<% provide(:title, 'Skills') %>
+<h1>Your Skills</h1>
+
+<!-- Skill -->
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <!--Sidebar content-->
+      <ul class="nav nav-pills nav-stacked">
+			  <li class="active">
+			    <a href="#">Learning (2)</a>
+			  </li>
+			  <li><a href="#">Reccomended (1)</a></li>
+			  <li><a href="#">Learned</a></li>
+			</ul>
+
+    </div>
+    
+    <div class="span9">
+      <!--Body content-->
+			<div class="form-actions">
+			    <button class="btn btn-primary align-center" type="button">Create a skill.</button>
+			    Or
+			    <button class="btn btn-primary align-center" type="button">Find a new skill.</button>
+			</div>
+
+      <h4>Skill: Learning (limit to 5)</h4>
+      <img src="skillsmain.png" class="img-rounded" alt="">
+
+      <h2>Skills/Learning/tasks </h2>
+      <img src="task.png" class="img-rounded" alt="">
+
+      <h2>Skills Pipeline: Recommended</h2>
+      (can only be recommend by people i am following)
+      <img src="skillsmain.png" class="img-rounded" alt="">
+
+       <h2>Skill: Learned</h2>
+      <img src="skillsmain.png" class="img-rounded" alt="">
+
+					
+					<!--Profile Button-->
+					<div class="row-fluid">
+						<div class="span12">
+								<%= link_to "Back", career_path, class: "btn btn-large btn-primary" %>
+								<%= link_to "See your profile!", user1_path, class: "btn btn-large btn-primary pull-right" %>
+						</div>	
+					</div>
+
+    </div>
+  </div>
+</div>
+
+	<!--Next Button -->
+

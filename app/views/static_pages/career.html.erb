@@ -1,0 +1,66 @@
+<% provide(:title, 'Career') %>
+<h1>What are you striving for?</h1>
+
+	<!--3 Columns-->
+	<div class="container-fluid">
+
+		<div class="row-fluid">
+	
+				<!--Column 2-->
+					<div class="span4"> 			
+						<%#= Who do you want to work with %>
+							<p><%= render 'layouts/profilepic' %> </p>
+							<p>Profile Overview </p>
+
+							<%#= Profile text input box %>
+								<form class="navbar-form ">
+									<textarea rows="5">
+								  	I am currently . . . but I want to be a . . . 
+								  </textarea>
+								</form>
+							<button type="submit" class="btn-primary btn-small">Add</button>
+							<%#= Profile text input box end%>
+
+						<%#= Who do you want to work with %>
+							<p>Add images of people you want to work with</p>
+								<form class="navbar-form ">
+									<textarea rows="1">
+								  	Add URL here
+								  </textarea>
+								</form>
+								<button type="submit" class="btn-primary btn-small">Add</button>
+									<img src="dolmen logo.png" class="img-rounded">
+									<img src="billliao.jpg" class="img-rounded">
+
+
+					</div>			
+
+					<!--Column 3-->
+					<div class="span8"> 	
+
+							<div class="form-actions">
+						    <button class="btn btn-primary align-center" type="button">Create a Career.</button>
+						    Or
+						    <button class="btn btn-primary align-center" type="button">Find a Career.</button>
+							</div>		
+
+						<%#= Who do you want to work with %>
+							<p>Find a Career</p>
+							<img src="careerfind.png" class="img-rounded" alt="">
+
+							<p>Can't find a Career? Create one</p>
+      				<img src="careercreate.png" class="img-rounded" alt="">
+	
+					</div>	
+
+		</div>
+	</div>				
+
+		
+
+	<!--Next Button -->
+
+			<div class="row-padded">
+				<%= link_to "Next!", skills_path, class: "btn btn-large btn-primary pull-right" %>
+			</div>	
+

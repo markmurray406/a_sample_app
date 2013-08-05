@@ -49,44 +49,45 @@ require 'spec_helper'
 		end
 
 	#------------------------- # Introduction and Setup pages ------------------------- 
-		# Tests for About You page
-		describe "About You page" do
-			before { visit aboutyou_path }
-				# This test for the presence of the About You in the content, see Listing 5.27
-				it { should have_selector('h1', text: 'About You') }
+		# Tests for User page
+		describe "User page" do
+			before { visit user1_path }
+				# This test for the presence of the users name in the content, see Listing 5.27
+				it { should have_selector('h6', text: 'Mark Murray') }
 
-				# This tests for the presence of Mntr me | About You in the title, see Listing 5.27 	
-				it { should have_selector('title', text: full_title('AboutYou')) }
+				# This tests for the presence of Mntr me | Profile in the title, see Listing 5.27 	
+				it { should have_selector('title', text: full_title('Profile')) }
+		end		
+
+		# Tests for Mntr me company page
+		describe "Mntr me company page" do
+			before { visit company1_path }
+				# This test for the presence of the companies name in the content, see Listing 5.27
+				it { should have_selector('h6', text: 'Mntr me') }
+
+				# This tests for the presence of Mntr me | Company Mntr me in the title, see Listing 5.27 	
+				it { should have_selector('title', text: full_title('Mntr me')) }
 		end		
 
 		# Tests for Doing Introduction page
-		describe "Do-it page" do
-			before { visit do_it_path }
-				# This test for the presence of the About You in the content, see Listing 5.27
-				it { should have_selector('h1', text: 'What do you want to do with your life?') }
+		describe "Career page" do
+			before { visit career_path }
+				# This test for the presence of a header in the content, see Listing 5.27
+				it { should have_selector('h1', text: 'What are you striving for?') }
 
-				# This tests for the presence of Mntr me | About You in the title, see Listing 5.27 	
-				it { should have_selector('title', text: full_title('Do it')) }
+				# This tests for the presence of Mntr me | 'You can do it' in the title, see Listing 5.27 	
+				it { should have_selector('title', text: full_title('Career')) }
 		end	
 
 		# Tests for Goals page
-		describe "Goals page" do
-			before { visit goals_path }
-				# This test for the presence of the Barriers in the content, see Listing 5.27
-				it { should have_selector('h1', text: 'goal') }
+		describe "Skills page" do
+			before { visit skills_path }
+				# This test for the presence of the goals in the content, see Listing 5.27
+				it { should have_selector('h1', text: 'Your Skills') }
 
 				# This tests for the presence of Mntr me | About You in the title, see Listing 5.27 	
-				it { should have_selector('title', text: full_title('Goals')) }
+				it { should have_selector('title', text: full_title('Skills')) }
 		end	
 
-		# Tests for Linkedin auth filler page
-		describe "Linkedin page" do
-			before { visit aboutyou_path }
-				# This test for the presence of the About You in the content, see Listing 5.27
-				#it { should have_selector('h1', text: 'About You') }
-
-				# This tests for the presence of Mntr me | About You in the title, see Listing 5.27 	
-				#it { should have_selector('title', text: full_title('AboutYou')) }
-		end	
 
 end		

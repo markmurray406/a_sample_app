@@ -1,0 +1,36 @@
+<p class="text-left">
+<%#= ----------- Name ------------- %>
+<h6>Hi, my name is Mark Murray.</h6>	
+
+<%#= ----------- My ambition ------------- %>
+	<h3>My Ambition.</h3>
+	<p class="lead">
+		I am an industrial designer but I am striving 
+		to create a career and mentoring network
+		for people with 0-3 years work experience.
+	</p>
+
+	<%#= ----------- 3rd Party Links ------------- %>
+	<%= link_to "View my Linkedin Account", "http://ie.linkedin.com/in/markmurray406", :target => 'new' %>
+	<%#= <img src="LinkedIn-Button.jpg" class="img-rounded"> %>
+
+<%#= ----------- MY CAREER PROSPECTS ------------- %>	
+<h2>My Career Prospects</h2>
+<%#= ----------- This is the occupation I want ------------- %>
+	<p><%= render 'layouts/occupations' %> </p>
+
+<%#= ----------- Who I want to work for ------------- %>
+	<!--People I want to work with -->	
+	<p><%= render 'layouts/peopletoworkwith' %> </p>
+
+<%#= ----------- SKILLS ------------- %>	
+<h2>My Skills</h2>
+<p><%= render 'layouts/skills' %> </p>
+
+
+<%#= ----------- Contacts ------------- %>	
+<h2>Contact me</h2>
+<img src="email.png" class="img-rounded">
+<img src="linkedin.png" class="img-rounded">
+<h4>100 people have this month</h4>
+</p>

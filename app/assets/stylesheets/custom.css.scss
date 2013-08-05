@@ -35,18 +35,43 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 3em;
-	letter-spacing: -2px;
+	letter-spacing: 0px;
 	margin-bottom: 30px;
 	text-align: center;
 }
 
 h2 {
 	font-size: 1.7em;
-	letter-spacing: -1px;
-	margin-bottom: 30px;
+	letter-spacing: 0px;
+	margin-top: 60px;
+	margin-bottom: 15px;
 	text-align: center;
 	font-weight: normal;
 	color: $grayLight;
+}
+
+h3 {
+	font-size: 2em;
+	letter-spacing: 0px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	text-align: left;
+}
+
+h4 {
+	font-size: 1.5em;
+	letter-spacing: 0px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+/*controls type for name on profile page  */
+h6 {
+	font-size: 2.5em;
+	letter-spacing: 0px;
+	margin-bottom: 15px;
+	text-align: left;
 }
 
 p {
@@ -96,4 +121,31 @@ footer {
 			margin-left: 10px;
 		}
 	}
+}
+
+/* Buttons on profile page, see user1.html.erb */
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+/* Buttons on profile page, see user1.html.erb */
+.section-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: left;
+}
+
+/* Addign padding and colour to row */
+.row-padded {
+  padding: 30px;
+  /* width: 30% */
+}
+
+/* Adding padding and colour around goals partial */
+.goal-actions {
+    margin: 0;
+    background-color: $grayLight;
+    text-align: left;
 }

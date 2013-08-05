@@ -12,17 +12,21 @@ class StaticPagesController < ApplicationController
 	def contact
 	end
 
+  # User page
+	def user1
+	end
+
+	# Company page
+	def company1
+	end
+
   # Introduction and Setup pages
-	def aboutyou
+	# Setup 1 of 2
+	def career
 	end
 
-	def do_it
-	end
-
-	def goals
-	end
-
-	def linkedin
+	# Setup 2 of 2
+	def skills
 	end
 	
 end

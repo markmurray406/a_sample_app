@@ -20,6 +20,11 @@
 		<%= render 'layouts/header' %>
 
 		<div class="container">
+			<%#= See Adding-users-with devise, omrails 04.50 %>	
+			<% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+      <% end %>
+
 			<%= yield %>
 			<%#= Renders the footer file in the layout folder, listing 5.12%>	
 			<%= render 'layouts/footer' %>

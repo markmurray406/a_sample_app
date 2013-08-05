@@ -1,0 +1,37 @@
+<p class="text-left">
+<%#= ----------- Name ------------- %>
+<h6>Hi, this is the Mntr me company page.</h6>	
+
+<%#= ----------- My ambition ------------- %>
+	<h3>Our Ambition.</h3>
+	<p class="lead">
+		We are a social media company focusing on  
+		creating a career and mentoring network
+		for people with 0-3 years work experience.
+	</p>
+
+	<%#= ----------- 3rd Party Links ------------- %>
+	<%= link_to "View our Linkedin Account", "http://ie.linkedin.com/in/markmurray406", :target => 'new' %>
+	<%#= <img src="LinkedIn-Button.jpg" class="img-rounded"> %>
+
+<%#= ----------- OUR CAREER PROSPECTS ------------- %>	
+<h2>Career Prospects we Offer</h2>
+<%#= ----------- PEOPLE WE WANT TO WORK WITH ------------- %>
+	<!--People I want to work with -->	
+	<p><%= render 'layouts/currentopenings' %> </p>
+
+<%#= ----------- This is the occupation I want ------------- %>
+	<p><%= render 'layouts/occupations2' %> </p>
+
+
+
+<%#= ----------- SKILLS ------------- 
+<h2>Entry Level Skills Required to work here</h2>
+<p><%= render 'layouts/skillscompany' %>
+
+<%#= ----------- Contacts ------------- %>	
+<h2>Contact us</h2>
+<img src="email.png" class="img-rounded">
+<img src="linkedin.png" class="img-rounded">
+<h4>100 people have this month</h4>
+</p>

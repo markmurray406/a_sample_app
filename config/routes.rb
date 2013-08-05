@@ -1,4 +1,6 @@
 ASampleApp::Application.routes.draw do
+  devise_for :users
+
   # See lisitng 5.32
   get "users/new"
 
@@ -9,13 +11,12 @@ ASampleApp::Application.routes.draw do
   # See Listing 5.23
   root to: 'static_pages#home'
 
+  # -------------- Introduction and Setup pages for company---------------------
+  match '/company1', to: 'static_pages#company1'
   # -------------- Introduction and Setup pages ---------------------
-  match '/aboutyou', to: 'static_pages#aboutyou'
-  match '/do_it', to: 'static_pages#do_it'
-  match '/goals', to: 'static_pages#goals'
-
-  # filler page
-  match '/linkedin/auth', to: 'static_pages#linkedin'
+  match '/user1', to: 'static_pages#user1'
+  match '/career', to: 'static_pages#career'
+  match '/skills', to: 'static_pages#skills'
 
   # -------------- Signup pages ---------------------
   # See Listing 5.32

@@ -1,0 +1,33 @@
+<%#= Pulls the code ' <title>Mntr me | <%= yield(:title) . . . from application.hml.erb%>
+<% provide(:title, 'Mntr me') %>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<!--Side navigation bar-->
+			<div class="span2"> 
+					<img src="mark-murray.png" class="img-rounded">
+					<h5>Mntr me</h5> 
+					<button class="btn btn-primary" type="button">Share</button>
+					<p><%= render 'layouts/navigation_tab' %> </p>
+			</div>
+			<!--Side navigation bar end-->		
+
+		<div class="span10">	
+
+				<div class="row-fluid">
+					<div class="span9">
+		      <!--Body content-->
+		      	<!--Profile content-->
+		      	<div class="row-fluid">
+		      		<p><%= render 'layouts/companyprofile' %> </p>
+		      	</div>	
+
+					</div>	
+
+					<div class="span3">
+						<p><%= render 'layouts/feed' %> </p>
+					</div>	
+		    </div>
+
+ </div> 
+</div>

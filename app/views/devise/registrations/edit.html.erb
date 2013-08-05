@@ -1,0 +1,25 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%#= Added simple in front of form_for and :html ... horizontal'} , see omrails customizing devise, 05:00 %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
+  <%= f.error_notification %>
+
+	<%#= Ran migration to add name to db, now making it visible in new form , see omrails customizing devise, 12:00 %>
+  <%= f.input :name %>
+  <%#= Changed email and password format , see omrails customizing devise, 03:00 %>
+  <%= f.input :email %>
+  <%= f.input :password, label: "New Password", autocomplete: "off" %>
+  <%= f.input :password_confirmation, label: "New Password Confirmation", autocomplete: "off" %>
+  <%= f.input :current_password %>
+
+  <div class="well">
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+<%= link_to "Back", :back %>

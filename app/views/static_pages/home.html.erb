@@ -1,11 +1,18 @@
-<%#= the hero-unit CSS class has a special meaning to Bootstrap #%>
-<div class="center hero-unit">
-	<h1>Mntr me</h1>
-		<p>
-		This is the home page for the Mntr me application.
-		</p>
+<%#= This creates a introductory page if not logged in and a home page when logged in, adding-users-with-devise, 17:30 #%>
+	<% if user_signed_in? %>
+		<h1>You're logged in</h1>
+			
+	<% else %>
+	<%#= INTRODUCTION PAGE, the hero-unit CSS class has a special meaning to Bootstrap #%>
+	<div class="center hero-unit">
+		<h1>Mntr me</h1>
+			<p>
+			This is the home page for the Mntr me application.
+			</p>
 
-	</h2>
-		<%= link_to "Sign up now!", '/linkedin/auth', class: "btn btn-large btn-primary" %>
-		<%#=  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %> 
-</div>
+		</h2>
+			<%#= This button sends the User to devises registration page, see omrails, adding-users-with-devise, 11:00 #%>
+			<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+	</div>
+
+<% end %>

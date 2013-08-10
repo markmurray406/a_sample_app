@@ -1,7 +1,13 @@
 class OccupationsController < ApplicationController
+
+  # add authetication of pins, see omrails, Add Associations . . . , 24:00
+  before_filter :authenticate_user!, except: [:index]
+
+
   # GET /occupations
   # GET /occupations.json
   def index
+    # To restrict so only views you occupations, see omrails, Add Associations . . ., 33:00
     @occupations = Occupation.all
 
     respond_to do |format|
@@ -24,7 +30,8 @@ class OccupationsController < ApplicationController
   # GET /occupations/new
   # GET /occupations/new.json
   def new
-    @occupation = Occupation.new
+    # Adding user id to saved occupations, see omrails, Add Associations . . ., 26:00
+    @occupation = current_user.occupations.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +41,15 @@ class OccupationsController < ApplicationController
 
   # GET /occupations/1/edit
   def edit
-    @occupation = Occupation.find(params[:id])
+    # Adding user id to saved occupations, see omrails, Add Associations . . ., 28:00
+    @occupation = current_user.occupations.find(params[:id])
   end
 
   # POST /occupations
   # POST /occupations.json
   def create
-    @occupation = Occupation.new(params[:occupation])
+    # Adding user id to saved occupations, see omrails, Add Associations . . ., 26:00
+    @occupation = current_user.occupations.new(params[:occupation])
 
     respond_to do |format|
       if @occupation.save
@@ -56,7 +65,7 @@ class OccupationsController < ApplicationController
   # PUT /occupations/1
   # PUT /occupations/1.json
   def update
-    @occupation = Occupation.find(params[:id])
+    @occupation = current_user.occupations.find(params[:id])
 
     respond_to do |format|
       if @occupation.update_attributes(params[:occupation])
@@ -72,7 +81,7 @@ class OccupationsController < ApplicationController
   # DELETE /occupations/1
   # DELETE /occupations/1.json
   def destroy
-    @occupation = Occupation.find(params[:id])
+    @occupation = current_user.occupations.find(params[:id])
     @occupation.destroy
 
     respond_to do |format|

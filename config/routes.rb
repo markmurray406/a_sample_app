@@ -1,4 +1,13 @@
 ASampleApp::Application.routes.draw do
+  resources :attempts
+
+
+  resources :goals
+
+
+  resources :skills
+
+
   resources :occupations
 
 

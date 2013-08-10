@@ -1,0 +1,19 @@
+<h1>Listing attempts</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tbody>
+    <%= render @attempts %>
+  </tbody>  
+
+</table>
+
+<br />
+
+<%= link_to 'New Attempt', new_attempt_path %>

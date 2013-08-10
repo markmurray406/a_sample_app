@@ -1,4 +1,7 @@
 class AttemptsController < ApplicationController
+  # add authetication of pins, see omrails, Add Associations . . . , 24:00
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /attempts
   # GET /attempts.json
   def index
@@ -24,7 +27,7 @@ class AttemptsController < ApplicationController
   # GET /attempts/new
   # GET /attempts/new.json
   def new
-    @attempt = Attempt.new
+    @attempt = current_user.attempts.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +37,13 @@ class AttemptsController < ApplicationController
 
   # GET /attempts/1/edit
   def edit
-    @attempt = Attempt.find(params[:id])
+    @attempt = current_user.attempts.find(params[:id])
   end
 
   # POST /attempts
   # POST /attempts.json
   def create
-    @attempt = Attempt.new(params[:attempt])
+    @attempt = current_user.attempts.new(params[:attempt])
 
     respond_to do |format|
       if @attempt.save
@@ -56,7 +59,7 @@ class AttemptsController < ApplicationController
   # PUT /attempts/1
   # PUT /attempts/1.json
   def update
-    @attempt = Attempt.find(params[:id])
+    @attempt = current_user.attempts.find(params[:id])
 
     respond_to do |format|
       if @attempt.update_attributes(params[:attempt])
@@ -72,7 +75,7 @@ class AttemptsController < ApplicationController
   # DELETE /attempts/1
   # DELETE /attempts/1.json
   def destroy
-    @attempt = Attempt.find(params[:id])
+    @attempt = current_user.attempts.find(params[:id])
     @attempt.destroy
 
     respond_to do |format|

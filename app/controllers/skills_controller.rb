@@ -1,4 +1,8 @@
 class SkillsController < ApplicationController
+
+  # add authetication of pins, see omrails, Add Associations . . . , 24:00
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /skills
   # GET /skills.json
   def index
@@ -24,7 +28,7 @@ class SkillsController < ApplicationController
   # GET /skills/new
   # GET /skills/new.json
   def new
-    @skill = Skill.new
+    @skill = current_user.skills.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +38,13 @@ class SkillsController < ApplicationController
 
   # GET /skills/1/edit
   def edit
-    @skill = Skill.find(params[:id])
+    @skill = current_user.skills.find(params[:id])
   end
 
   # POST /skills
   # POST /skills.json
   def create
-    @skill = Skill.new(params[:skill])
+    @skill = current_user.skills.new(params[:skill])
 
     respond_to do |format|
       if @skill.save
@@ -56,7 +60,7 @@ class SkillsController < ApplicationController
   # PUT /skills/1
   # PUT /skills/1.json
   def update
-    @skill = Skill.find(params[:id])
+    @skill = current_user.skills.find(params[:id])
 
     respond_to do |format|
       if @skill.update_attributes(params[:skill])
@@ -72,7 +76,7 @@ class SkillsController < ApplicationController
   # DELETE /skills/1
   # DELETE /skills/1.json
   def destroy
-    @skill = Skill.find(params[:id])
+    @skill = current_user.skills.find(params[:id])
     @skill.destroy
 
     respond_to do |format|

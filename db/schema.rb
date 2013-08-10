@@ -11,13 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130810165202) do
+ActiveRecord::Schema.define(:version => 20130810191055) do
 
   create_table "attempts", :force => true do |t|
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
+
+  add_index "attempts", ["user_id"], :name => "index_attempts_on_user_id"
 
   create_table "careers", :force => true do |t|
     t.string   "description"
@@ -29,7 +32,10 @@ ActiveRecord::Schema.define(:version => 20130810165202) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
+
+  add_index "goals", ["user_id"], :name => "index_goals_on_user_id"
 
   create_table "occupations", :force => true do |t|
     t.string   "description"
@@ -50,7 +56,10 @@ ActiveRecord::Schema.define(:version => 20130810165202) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
+
+  add_index "skills", ["user_id"], :name => "index_skills_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

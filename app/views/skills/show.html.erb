@@ -2,7 +2,12 @@
   <b>Description:</b>
   <%= @skill.description %>
 </p>
+<p>
+	<%= @skill.user.name %>
+</p>	
 
-
+<% if current_user == @skill.user %>
 <%= link_to 'Edit', edit_skill_path(@skill) %> |
+<% end %>
 <%= link_to 'Back', skills_path %>
+

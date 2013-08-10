@@ -6,6 +6,7 @@
   	</p>	
 </p>
 
-
-<%= link_to 'Edit', edit_occupation_path(@occupation) %> |
-<%= link_to 'Back', occupations_path %>
+<% if current_user == @occupation.user %>
+	<%= link_to 'Edit', edit_occupation_path(@occupation) %> |
+<% end %>	
+	<%= link_to 'Back', occupations_path %>

@@ -1,5 +1,12 @@
 ASampleApp::Application.routes.draw do
+  resources :occupations
+
+
+  # See omrails example and http://stackoverflow.com/questions/7086583/creating-a-users-show-page-using-devise
+  get "users/show"
+
   devise_for :users
+  match 'users/:id' => 'users#show', as: :user
 
   # See lisitng 5.32
   get "users/new"

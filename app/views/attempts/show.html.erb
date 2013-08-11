@@ -1,10 +1,13 @@
+ <%#= Displaying image see omrails Paperclip, 13:00 %>
+<%= image_tag @attempt.image %>
+
 <p>
   <b>Description:</b>
   <%= @attempt.description %>
 </p>
 
 <p>
-	<%= @skill.user.name %>
+	<%= @attempt.user.name %>
 </p>	
 
 <% if current_user == @attempt.user %>

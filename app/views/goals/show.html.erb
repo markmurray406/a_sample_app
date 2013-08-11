@@ -1,13 +1,16 @@
+<%#= Displaying image see omrails Paperclip, 13:00 %>
+<%= image_tag @goal.image %>
+
 <p>
   <b>Description:</b>
   <%= @goal.description %>
 </p>
 
 <p>
-	<%= @skill.user.name %>
+	<%= @goal.user.name %>
 </p>	
 
-<% if current_user == @skill.user %>
+<% if current_user == @goal.user %>
 	<%= link_to 'Edit', edit_goal_path(@goal) %> |
 <% end %>	
 	<%= link_to 'Back', goals_path %>

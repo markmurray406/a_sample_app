@@ -1,6 +1,9 @@
 <tr>
- <td><%= skill.description %></td>
- <td><%= link_to 'Show', skill %></td>
+	<%#= Displaying image, see omrails Paperclip, 15:00 and 16:00 %>
+	<td><%= image_tag skill.image(:medium) %></td>
+
+ 	<td><%= skill.description %></td>
+ 	<td><%= link_to 'Show', skill %></td>
 
  	<% if current_user == skill.user %>
 	 <td><%= link_to 'Edit', edit_skill_path(skill) %></td>

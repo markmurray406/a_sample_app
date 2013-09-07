@@ -1,6 +1,8 @@
 <%#= This creates a introductory page if not logged in and a home page when logged in, adding-users-with-devise, 17:30 #%>
 	<% if user_signed_in? %>
 		<h1>You're logged in</h1>
+
+		Show index of the latest skills and occupations based on the users selection, like spotifys discover.
 			
 	<% else %>
 	<%#= INTRODUCTION PAGE, the hero-unit CSS class has a special meaning to Bootstrap #%>

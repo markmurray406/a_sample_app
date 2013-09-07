@@ -21,9 +21,19 @@ class OccupationsController < ApplicationController
   def show
     @occupation = Occupation.find(params[:id])
 
+    # Create instance varibles for talents
+    @talented = @occupation
+    @talents = @talented.talents
+    @talent = Talent.new
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @occupation }
+
+    # Create instance varibles for skills
+    @skill = @occupation
+    @skill = Skill.new 
+    @skills = @occupation.skills
     end
   end
 

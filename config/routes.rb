@@ -1,14 +1,29 @@
 ASampleApp::Application.routes.draw do
-  resources :attempts
-
-
-  resources :goals
-
-
-  resources :skills
-
-
   resources :occupations
+  resources :skills
+  resources :skill
+
+  get "skills/index"
+
+  get "skills/new"
+
+  get "talents/index"
+
+  get "talents/new"
+
+  resources :occupations do
+    resources :talents
+    # Adding the onlu: . . .  means we don't get long urls such as occupations/10/skills/1/etc.
+    resources :skills, only: [:index, :new, :create]
+  end  
+ 
+     # Adding the onlu: . . .  means we don't get long urls such as occupations/10/skills/1/etc.
+    resources :skills, only: [:show, :edit, :update, :destroy]
+
+  # Adding the below stops the sign-in from working, get the following Active Records error "Couldn't find User with id=sign_in"
+  # resources :users do
+  #   resources :skills
+  # end
 
 
   # See omrails example and http://stackoverflow.com/questions/7086583/creating-a-users-show-page-using-devise

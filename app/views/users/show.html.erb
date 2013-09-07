@@ -1,1 +1,26 @@
 <h1><%= @user.name %></h1>
+	<%= render 'occupations/form' %>  
+	<%= render 'skills/form' %> 
+
+<%#=MHarls Micropost %>
+<div class="row">
+  <div class="span8">
+    <% if @user.occupations.any? %>
+      <h3>Desired Occupations (<%= @user.occupations.count %>)</h3>
+      <ol class="occupations">
+        <%= render @occupations %>
+      </ol>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <% if @user.skills.any? %>
+      <h3>Desired Skills (<%= @user.skills.count %>)</h3>
+      <ol class="skills">
+        <%= render @skills %>
+      </ol>
+    <% end %>
+  </div>
+</div>

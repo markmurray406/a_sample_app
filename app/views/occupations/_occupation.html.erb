@@ -1,15 +1,16 @@
+<div class="box">
 <%#= Adding occupations partial, see omrails Generate Pins Scaffold, 15:30 %>
-  <tr>
   	<%#= Displaying image, see omrails Paperclip, 15:00 and 16:00%>
-  	<td><%= image_tag occupation.image(:medium) %></td>
+  	<%= image_tag occupation.image(:medium) %>
+  	Started by:<%= occupation.user.name %>
 
-    <td><%= occupation.description %></td>
-    <td><%= link_to 'Show', occupation %></td>
+    <%= occupation.description %>
+    <%= link_to 'Show', occupation %>
 
     <% if current_user == occupation.user %>
-	    <td><%= link_to 'Edit', edit_occupation_path(occupation) %></td>
-	    <td><%= link_to 'Destroy', occupation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	    <%= link_to 'Edit', edit_occupation_path(occupation) %>
+	    <%= link_to 'Destroy', occupation, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
+</div>    
 
-  </tr>
 

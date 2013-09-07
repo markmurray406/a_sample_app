@@ -1,22 +1,7 @@
 <h1>Listing skills</h1>
 
-<table>
-  <tr>
-  	<%#= Adding image column, see omrails Paperclip, 15:00 %>
-  	<th>Image</th>
-  	
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <tbody>
+  <div id="skills">
     <%= render @skills %>
-  </tbody> 
-
-</table>
-
-<br />
+  </div>   
 
 <%= link_to 'New Skill', new_skill_path %>

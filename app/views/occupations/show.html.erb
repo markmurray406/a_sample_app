@@ -1,15 +1,49 @@
-<%#= Displaying image see omrails Paperclip, 13:00 %>
-<%= image_tag @occupation.image %>
+ <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <!--Sidebar content-->
+      <%#= Displaying image see omrails Paperclip, 13:00 %>
+			<%= image_tag @occupation.image %>
 
-<p>
-  <b>Occupation:</b>
-  <%= @occupation.description %>
-  	<p>	
-  		<%= @occupation.user.name %>
-  	</p>	
-</p>
+			<p>
+			  <b>Occupation:</b>
+			  <%= @occupation.description %>
+			  	<p>	
+			  		Started by: <%= @occupation.user.name %>
+			  	</p>	
+			</p>
 
-<% if current_user == @occupation.user %>
-	<%= link_to 'Edit', edit_occupation_path(@occupation) %> |
-<% end %>	
-	<%= link_to 'Back', occupations_path %>
+			<% if current_user == @occupation.user %>
+				<%= link_to 'Edit', edit_occupation_path(@occupation) %> |
+			<% end %>	
+				<%= link_to 'Back', occupations_path %>
+  </div>
+
+    <div class="span9">
+    	<%#= <%= render "talents/form" %> 
+			<%#= <%= render "talents/talents" %> 
+
+			<div class="row">
+				<%= render 'skills/form' %> 
+			  <div class="span8">
+			    <% if @occupation.skills.any? %>
+			      <h3>Desired Skills (<%= @occupation.skills.count %>)</h3>
+			      <ol class="skills">
+			        <%= render @skills %>
+			      </ol>
+			    <% end %>
+			  </div>
+			</div>
+
+  	</div>
+
+</div>
+
+
+
+
+
+	
+
+
+

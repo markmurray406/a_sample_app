@@ -1,0 +1,60 @@
+                  skills GET    /skills(.:format)                                      skills#index
+                         POST   /skills(.:format)                                      skills#create
+               new_skill GET    /skills/new(.:format)                                  skills#new
+              edit_skill GET    /skills/:id/edit(.:format)                             skills#edit
+                   skill GET    /skills/:id(.:format)                                  skills#show
+                         PUT    /skills/:id(.:format)                                  skills#update
+                         DELETE /skills/:id(.:format)                                  skills#destroy
+            skills_index GET    /skills/index(.:format)                                skills#index
+              skills_new GET    /skills/new(.:format)                                  skills#new
+           talents_index GET    /talents/index(.:format)                               talents#index
+             talents_new GET    /talents/new(.:format)                                 talents#new
+      occupation_talents GET    /occupations/:occupation_id/talents(.:format)          talents#index
+                         POST   /occupations/:occupation_id/talents(.:format)          talents#create
+   new_occupation_talent GET    /occupations/:occupation_id/talents/new(.:format)      talents#new
+  edit_occupation_talent GET    /occupations/:occupation_id/talents/:id/edit(.:format) talents#edit
+       occupation_talent GET    /occupations/:occupation_id/talents/:id(.:format)      talents#show
+                         PUT    /occupations/:occupation_id/talents/:id(.:format)      talents#update
+                         DELETE /occupations/:occupation_id/talents/:id(.:format)      talents#destroy
+       occupation_skills GET    /occupations/:occupation_id/skills(.:format)           skills#index
+                         POST   /occupations/:occupation_id/skills(.:format)           skills#create
+    new_occupation_skill GET    /occupations/:occupation_id/skills/new(.:format)       skills#new
+             occupations GET    /occupations(.:format)                                 occupations#index
+                         POST   /occupations(.:format)                                 occupations#create
+          new_occupation GET    /occupations/new(.:format)                             occupations#new
+         edit_occupation GET    /occupations/:id/edit(.:format)                        occupations#edit
+              occupation GET    /occupations/:id(.:format)                             occupations#show
+                         PUT    /occupations/:id(.:format)                             occupations#update
+                         DELETE /occupations/:id(.:format)                             occupations#destroy
+                         GET    /skills/:id/edit(.:format)                             skills#edit
+                         GET    /skills/:id(.:format)                                  skills#show
+                         PUT    /skills/:id(.:format)                                  skills#update
+                         DELETE /skills/:id(.:format)                                  skills#destroy
+              users_show GET    /users/show(.:format)                                  users#show
+        new_user_session GET    /users/sign_in(.:format)                               devise/sessions#new
+            user_session POST   /users/sign_in(.:format)                               devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)                              devise/sessions#destroy
+           user_password POST   /users/password(.:format)                              devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)                          devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)                         devise/passwords#edit
+                         PUT    /users/password(.:format)                              devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)                                devise/registrations#cancel
+       user_registration POST   /users(.:format)                                       devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)                               devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                                  devise/registrations#edit
+                         PUT    /users(.:format)                                       devise/registrations#update
+                         DELETE /users(.:format)                                       devise/registrations#destroy
+                    user        /users/:id(.:format)                                   users#show
+               users_new GET    /users/new(.:format)                                   users#new
+                    root        /                                                      static_pages#home
+                company1        /company1(.:format)                                    static_pages#company1
+                   user1        /user1(.:format)                                       static_pages#user1
+                  career        /career(.:format)                                      static_pages#career
+                                /skills(.:format)                                      static_pages#skills
+                  signup        /signup(.:format)                                      users#new
+                    help        /help(.:format)                                        static_pages#help
+                   about        /about(.:format)                                       static_pages#about
+                 contact        /contact(.:format)                                     static_pages#contact
+                                /auth/:provider/callback(.:format)                     sessions#create
+            auth_failure        /auth/failure(.:format)                                :controller#:action
+                 signout        /signout(.:format)                                     sessions#destroy

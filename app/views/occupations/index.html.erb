@@ -1,20 +1,9 @@
-<h1>Listing Occupations</h1>
+<%#= Adding New Occupation, Skills button to header, se omrails, 17:00%>	
+<li><%= link_to "Create Occupation", new_occupation_path %></li>
 
-<table>
-  <tr>
-  	<%#= Adding image column, see omrails Paperclip, 15:00 %>
-  	<th>Image</th>
-  	
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="occupations">
+  <%= render @occupations %>
+</div>
 
-  <tbody>
-    <%= render @occupations %>
-  </tbody> 
 
-</table>
 
-<%= link_to 'New Occupation', new_occupation_path %>

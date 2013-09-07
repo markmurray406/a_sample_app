@@ -1,8 +1,5 @@
 class SkillsController < ApplicationController
-
-  # add authetication of pins, see omrails, Add Associations . . . , 24:00
   before_filter :authenticate_user!, except: [:index]
-
   # GET /skills
   # GET /skills.json
   def index
@@ -27,8 +24,14 @@ class SkillsController < ApplicationController
 
   # GET /skills/new
   # GET /skills/new.json
+
   def new
-    @skill = current_user.skills.new
+    #@skill = current_user.skills.new
+    #@skill = Skill.new(params[:skill])
+
+    @occupation = Occupation.find(params[:occupation])
+    @skill = @occupation.skills.build(params[:skill])
+    @skill.user = User.find(current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,17 +47,36 @@ class SkillsController < ApplicationController
   # POST /skills
   # POST /skills.json
   def create
-    @skill = current_user.skills.new(params[:skill])
+    #@skill = current_user.skills.new(params[:skill]) 
 
-    respond_to do |format|
-      if @skill.save
-        format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
-        format.json { render json: @skill, status: :created, location: @skill }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @skill.errors, status: :unprocessable_entity }
-      end
-    end
+    # Setting the skills in the occupation show page.
+      #Rails.logger.level = 0
+      #Rails.logger.fatal "Logger Message"
+      #Rails.logger.fatal params[:occupation]
+      @occupation = Occupation.find_by_id(params[:occupation])
+      Rails.logger.info("PARAMS: #{params.inspect}")
+      #Rails.logger.fatal @occupation
+
+      #@occupation = Occupation.find(10)
+      #@occupation = Occupation.find(10)
+      #u = User.find(current_user.id)
+      #s = u.occupations.first
+      #@occupation = Occupation.find(s)
+      #@skill = @occupation.skills.new(params[:skill])
+      @skill = @occupation.skills.build(params[:skill])
+      #@skill = @occupation.(Skills.all).build(params[:skill])
+      @skill.user = User.find(current_user.id)
+    # setting the skills in the occupation show page.  
+
+      respond_to do |format|
+        if @skill.save
+          format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
+          format.json { render json: @skill, status: :created, location: @skill }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @skill.errors, status: :unprocessable_entity }
+       end
+      end 
   end
 
   # PUT /skills/1

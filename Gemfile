@@ -8,6 +8,9 @@ gem "paperclip", "~> 3.0"
 gem 'omniauth'
 gem 'omniauth-linkedin'
 
+# http://stackoverflow.com/questions/9612618/warn-could-not-determine-content-length-of-response-body-set-content-length-of
+gem 'thin'
+
 group :development, :test do
 gem 'sqlite3', '1.3.5'
 gem 'rspec-rails', '2.11.0'

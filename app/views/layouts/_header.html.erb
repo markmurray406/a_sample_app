@@ -9,9 +9,10 @@
 
 					<%#= This creates an if/else statement to show login/logout buttons, adding-users-with-devise, 16:00 #%>
 					<% if user_signed_in? %>
+						<%#= Adding New Occupation, Skills button to header, se omrails, 17:00%>	
+						<li><%= link_to "Create Occupation", new_occupation_path %></li>
+
 						<li><%= link_to "Career (1)", career_path %></li>
-						<li><%= link_to "Skills (3)", skills_path %></li>
-						<li><%= link_to "Promote yourself (1)", '#' %></li>
 						<li><%= link_to "Contact us", contact_path %></li>
 						<li><%= link_to "Sign in", 'auth/linkedin' %></li>
 						<%#= This button allows the user to edit their profile see omrails, adding-users-with-devise, 18:30 #%>

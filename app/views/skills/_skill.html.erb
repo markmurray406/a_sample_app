@@ -1,13 +1,17 @@
 <tr>
-	<%#= Displaying image, see omrails Paperclip, 15:00 and 16:00 %>
-	<td><%= image_tag skill.image(:medium) %></td>
+	<%= image_tag skill.image(:medium) %>
+  Started by:<%= skill.user.name %>
 
- 	<td><%= skill.description %></td>
- 	<td><%= link_to 'Show', skill %></td>
+	<td><%= skill.summary %></td>
+  <td><%= skill.description %></td>
+  <td><%= link_to 'Show', skill %></td>
 
- 	<% if current_user == skill.user %>
-	 <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
-	 <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	<% end %> 
-	
+  <% if current_user == skill.user %>
+  	<td><%= link_to 'Edit', edit_skill_path(skill) %></td>
+  	<td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+
+
 </tr>
+
+

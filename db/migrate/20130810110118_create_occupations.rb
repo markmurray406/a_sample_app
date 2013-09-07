@@ -5,5 +5,6 @@ class CreateOccupations < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :occupations, [:user_id, :created_at]
   end
 end

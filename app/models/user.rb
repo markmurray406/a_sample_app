@@ -10,7 +10,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :occupations
-  has_many :skills
-  has_many :goals
-  has_many :attempts
+  has_many :skills, :dependent => :destroy
 end

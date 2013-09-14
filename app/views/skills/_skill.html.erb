@@ -1,6 +1,7 @@
 <tr>
 	<%= image_tag skill.image(:medium) %>
   Started by:<%= skill.user.name %>
+  <%#= Belongs to: <%= skill.occupation.description %>
 
 	<td><%= skill.summary %></td>
   <td><%= skill.description %></td>

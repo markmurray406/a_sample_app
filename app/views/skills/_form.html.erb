@@ -1,4 +1,9 @@
-<%= simple_form_for(@skill, html: { class: "form-horizontal"}) do |f| %>
+<%= simple_form_for @skill, html: { class: "form-horizontal"} do |f| %>
+
+	<%#= http://stackoverflow.com/questions/7261636/rails-3-couldnt-find-model-without-an-id-problem %>
+	<%= hidden_field_tag :skill_id, value = @skill.id %>
+	<%= hidden_field_tag :occupation_id, value = @occupation.id %>
+
   <%= f.error_notification %>
   <%= f.full_error :image_file_size, class: "alert alert-error" %>
   <%= f.full_error :image_content_type, class: "alert alert-error" %>

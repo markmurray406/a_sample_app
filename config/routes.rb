@@ -1,24 +1,39 @@
 ASampleApp::Application.routes.draw do
-  resources :occupations
+
+  resources :tutorials
+
+
+  # http://sixrevisions.com/web-development/how-to-create-a-blog-from-scratch-using-ruby-on-rails/
+  #get ':controller/:action/:id'
+  #get ':controller/:action/:id.:format'
+  #connect ':controller/:action/:id.:format'
+  #map.root :controller => "post"
+
+
+  #resources :occupations
   resources :skills
-  resources :skill
+  # Adding this cause the template to go missing when we create a new skill in an occupation.
+  #resources :skills, only: [:index, :show, :edit, :update, :destroy]
 
   get "skills/index"
 
-  get "skills/new"
+  #get "skills/new"
+
+  get "skills/show"
 
   get "talents/index"
 
   get "talents/new"
 
   resources :occupations do
+  #resources :occupations, :shallow => true do
     resources :talents
     # Adding the onlu: . . .  means we don't get long urls such as occupations/10/skills/1/etc.
-    resources :skills, only: [:index, :new, :create]
+    resources :skills, only: [:new, :create]
   end  
  
      # Adding the onlu: . . .  means we don't get long urls such as occupations/10/skills/1/etc.
-    resources :skills, only: [:show, :edit, :update, :destroy]
+  #resources :skills, only: [:index, :show, :edit, :update, :destroy]
 
   # Adding the below stops the sign-in from working, get the following Active Records error "Couldn't find User with id=sign_in"
   # resources :users do

@@ -61,6 +61,10 @@ class OccupationsController < ApplicationController
     # Adding user id to saved occupations, see omrails, Add Associations . . ., 26:00
     @occupation = current_user.occupations.new(params[:occupation])
 
+    #http://stackoverflow.com/questions/6480713/how-to-get-the-post-id-in-rails 10 SEPT 2013
+    @skill = current_user.skills.new(params[:skill])
+    @skill.occupation = Occupation.find(params[:occupation_id])
+
     respond_to do |format|
       if @occupation.save
         format.html { redirect_to @occupation, notice: 'Occupation was successfully created.' }

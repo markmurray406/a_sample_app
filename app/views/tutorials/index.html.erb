@@ -1,0 +1,19 @@
+<h1>Listing tutorials</h1>
+
+<table>
+  <tr>
+    <th>Summary</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tbody>
+    <%= render @tutorials %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Tutorial', new_tutorial_path %>
